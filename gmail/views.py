@@ -15,10 +15,10 @@ from rest_framework.response import Response
 
 def getemail(request):
 
-      s="pooj98.pp@gmail.com"
-      email= request.GET.get('s')
-      var="http://127.0.0.1:8000/emailsendlogic?email=,s"
       
+      email= request.GET.get('email')
+      var=f"http://127.0.0.1:8000/emailsendlogic?email={email}"  
+
       response=requests.get(var)
       if(response.status_code==200):
             return  Response("sucess")
